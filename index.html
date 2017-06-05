@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+        <!-- Local css files -->
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="/css/loader.css" rel="stylesheet" />
+        
+</head>
+
+<body ng-app="myApp" ng-controller="mainCtrl">
+    <!-- 3 top box's -->
+    <div class=" box-navbar">
+        <div class="col-xs-4 top-box animated slideInDown">
+            <div class="jumbotron">
+                <i class="fa fa-play fa-3x" aria-hidden="true" style="border: 10px solid #b9b7b8;border-radius: 8px;"></i>
+                <div class="time-details">
+                    <h2>{{ currentTime.time ? currentTime.time : 'fetching time...'  }}</h2>
+                    <h2>Time</h2>
+                    <p>Lorem ipsum psdea itgum rixt. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 top-box animated slideInDown">
+            <div class="jumbotron">
+                <i class="fa fa-comments-o fa-5x" aria-hidden="true"></i>
+                <div class="time-details">
+                    <h2>{{ currentIP.ip ? currentIP.ip : 'fetching IP...' }}</h2>
+                    <h2>Your IP</h2>
+                    <p>Lorem ipsum psdea itgum rixt. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 top-box animated slideInDown">
+            <div class="jumbotron">
+                <i class="fa fa-signal fa-4x fa-flip-horizontal" aria-hidden="true" style=" -webkit-transform: rotate(90deg) scaleX(-1)"></i>
+                <i class="fa fa-long-arrow-down fa-4x" aria-hidden="true" style="margin-right: 0px !important;padding-right: 0px;"></i>
+                <div class="time-details">
+                    <h2>{{ currentLanguage ? currentLanguage : 'fetching Language...'}}</h2>
+                    <h2>Language</h2>
+                    <p>Lorem ipsum psdea itgum rixt. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nice loader -->
+    <div ng-show="loaderBool">
+        <div class="blob blob-0"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="blob blob-5"></div>
+    </div>
+    <!-- Answers  -->
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-1 animated fadeInUp">
+            <div class="panel panel-default ">
+                <h2 style="margin-left:13px;">Answers </h2>
+                <div class="panel panel-body answer">
+                    <div class="row" style="padding-right:10px;">
+                        <div class="col-xs-3 col-md-3 text-center">
+                            <img src="images/opaqsqX.png" alt="bootsnipp" />
+                        </div>
+                        <div class="col-xs-5 col-md-5 text-box">
+                            <h4>
+                                <b>HP</b> - Experienced Developer
+                            </h4>
+                            <b>Congratulation, you're hired!</b> <span> Today </span> <b class="new-sign">NEW</b>
+                        </div>
+                        <div class="panel col-xs-4 tell-us-box">
+                            <div class="panel col-xs-10 tell-us-text">
+                                <p>Tell us about your Codex recruting process</p>
+                            </div>
+                            <div class="panel col-xs-2 tell-us-arrow">
+                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel-body answer-bottom">
+                            <a style="text-decoration: underline">5 older answers </a> </div>
+                    </div>
+                </div>
+                <!-- Interviews  -->
+                <h2>Interviews </h2>
+                <div class="panel panel-body answer">
+                    <div class="row" style="padding-right:10px;">
+                        <div class="col-xs-3 col-md-3 text-center">
+                            <img src="images/opaqsqX.png" alt="bootsnipp" />
+                        </div>
+                        <div class="col-xs-5 col-md-5 text-box">
+                            <h4>
+                                <b>HP</b> - Experienced Developer
+                            </h4>
+                            <b>Congratulation, you're hired!</b> Yesturday <b class="new-sign">NEW</b>
+                            <p>
+                                Dear applicant, we recivied your resume through the Codex system and we are glad to glad to inform you that we wish to interview
+                                you. in the next few days.
+                            </p>
+                            <a style="text-decoration: underline; float:right"> more </a>
+                        </div>
+                        <div class="panel col-xs-4 " style="margin-top: 15px;">
+                            <div class="row tell-us-box">
+                                <div class="panel col-xs-10 tell-us-text">
+                                    <p>Tell us about your Codex recruting process</p>
+                                </div>
+                                <div class="panel col-xs-2 tell-us-arrow" style="padding-left: 0px;">
+                                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div class="row tell-us-box" style="margin-top:10px;">
+                                <div ng-controller="datePickerCtrl">
+                                    <p class="input-group" style="margin: 10px;">
+                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions"
+                                            ng-required="true" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)">
+                                             <i class="glyphicon glyphicon-calendar"></i></button>
+                                     </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-body answer">
+                    <div class="row" style="padding-right:10px;">
+                        <div class="col-xs-3 col-md-3 text-center">
+                            <img src="images/opaqsqX.png" alt="bootsnipp" />
+                        </div>
+                        <div class="col-xs-5 col-md-5 text-box">
+                            <h4>
+                                <b>HP</b> - Experienced Developer
+                            </h4>
+                            <b>Congratulation, you're hired!</b> Yesturday <b class="new-sign">NEW</b>
+                            <p>
+                                Dear applicant, we recivied your resume through the Codex system and we are glad to glad to inform you that we wish to interview
+                                you. in the next few days.
+                            </p>
+                            <a style="text-decoration: underline; float:right"> more </a>
+                        </div>
+                        <div class="panel col-xs-4 " style="margin-top: 15px;">
+                            <div class="row tell-us-box">
+                                <div class="panel col-xs-10 tell-us-text">
+                                    <p>Tell us about your Codex recruting process</p>
+                                </div>
+                                <div class="panel col-xs-2 tell-us-arrow" style="padding-left: 0px;">
+                                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div class="row tell-us-box" style="margin-top:10px;">
+                                <div ng-controller="datePickerCtrl">
+                                    <p class="input-group" style="margin: 10px;">
+                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions"
+                                            ng-required="true" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)">
+                                             <i class="glyphicon glyphicon-calendar"></i></button>
+                                     </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-body answer">
+                    <div class="row" style="padding-right:10px;">
+                        <div class="col-xs-3 col-md-3 text-center">
+                            <img src="images/opaqsqX.png" alt="bootsnipp" />
+                        </div>
+                        <div class="col-xs-5 col-md-5 text-box">
+                            <h4>
+                                <b>HP</b> - Experienced Developer
+                            </h4>
+                            <b>Congratulation, you're hired!</b> Yesturday <b class="new-sign">NEW</b>
+                            <p>
+                                Dear applicant, we recivied your resume through the Codex system and we are glad to glad to inform you that we wish to interview
+                                you. in the next few days.
+                            </p>
+                            <a style="text-decoration: underline; float:right"> more </a>
+                        </div>
+                        <div class="panel col-xs-4 " style="margin-top: 15px;">
+                            <div class="row tell-us-box">
+                                <div class="panel col-xs-10 tell-us-text">
+                                    <p>Tell us about your Codex recruting process</p>
+                                </div>
+                                <div class="panel col-xs-2 tell-us-arrow" style="padding-left: 0px;">
+                                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div class="row tell-us-box" style="margin-top:10px;">
+                                <div ng-controller="datePickerCtrl">
+                                    <p class="input-group" style="margin: 10px;">
+                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions"
+                                            ng-required="true" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)">
+                                             <i class="glyphicon glyphicon-calendar"></i></button>
+                                     </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<p> here </p>-->
+            </div>
+        </div>
+        <div class="col-xs-3 col-xs-offset-1 animated slideInRight" style="width: 23%;padding-right: 35px;">
+            <!-- user box -->
+            <div class="panel panel-body user-box">
+                <div class="row">
+                    <div class="col-xs-2 col-md-2 text-center">
+                        <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-9 col-md-9 user-box-text">
+                        <h4>
+                            <b>Liat Ben-Zvi</b>
+                        </h4>
+                        <p style="margin-bottom: 20px;">Your recruitment counsel </p>
+                    </div>
+                </div>
+                <div class="row user-box-contact">
+                    <div class="col-xs-5 col-xs-offset-2"><i class="fa fa-phone" aria-hidden="true"></i> <b>Phone</b></div>
+                    <div class="col-xs-5"> <i class="fa fa-envelope" aria-hidden="true"></i> <b>email</b></div>
+                </div>
+            </div>
+            <!-- Search Jobs Listings -->
+            <div class="panel panel-body user-box user-jobs">
+                <div>
+                    <h5> <b>Search Jobs Listings</b> </h5>
+                    <div>
+                        <div class="user-jobs-numbers">
+                            <span class="numberCircle">5</span> <span style="padding-right:15px;">Favorites</span>
+                            <span class="numberCircle">23</span> <span>Relavent Jobs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Share Jobs Listings -->
+            <div class="panel panel-body user-box user-box-comment-first">
+                <h5>
+                    <b>Share Jobs Listings</b>
+                    <i class="fa fa-bullhorn fa-1x" aria-hidden="true" style="float:right"></i>
+                </h5>
+                <h5>
+                    <b>Entry Level Intellectual Property Attorney</b>
+                </h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. </p>
+                <div style="padding-bottom:10px;">
+                    <i class="fa fa-star fa-1x" aria-hidden="true"></i>
+                    <span style="font-size: 14px;"><b>4.5</b></span>
+                    <span ng-click="openSharing()" style="float:right; cursor: pointer;"><i class="fa fa-share-alt" aria-hidden="true" ></i> </span>
+                </div>
+            </div>
+            <div class="panel panel-body user-box user-box-comment">
+                <h5>
+                    <b>Share Jobs Listings</b>
+                    <i class="fa fa-bullhorn fa-1x" aria-hidden="true" style="float:right"></i>
+                </h5>
+                <h5>
+                    <b>Entry Level Intellectual Property Attorney</b>
+                </h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. </p>
+                <div style="padding-bottom:10px;">
+                    <i class="fa fa-star fa-1x" aria-hidden="true"></i>
+                    <span style="font-size: 14px;"><b>4</b></span>
+                    <span ng-click="openSharing()" style="float:right; cursor: pointer;"><i class="fa fa-share-alt" aria-hidden="true" ></i> </span>
+                </div>
+                <div class="row" style="background:white;">
+                    <p>Help your friends find more job openings</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>D Shnayderman</p>
+        </div>
+    </footer>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<!-- Local js files -->
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/mainController.js"></script>
+<script type="text/javascript" src="js/controllers/datePickerController.js"></script>
+<script type="text/javascript" src="js/services/serviceFactory.js"></script>
+
+</html>

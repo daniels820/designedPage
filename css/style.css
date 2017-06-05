@@ -1,0 +1,167 @@
+body {
+    background-color: #eeeeee;
+}
+
+footer {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: dodgerblue;
+    font-family: cursive;
+    text-align: -webkit-right;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    background-color: #eee;
+}
+
+.top-box {
+    color: #b9b7b8;
+    background: #eee;
+}
+
+.top-box .jumbotron {
+    padding: 0px !important;
+    background: white;
+    padding-bottom: 10px !important;
+}
+
+.top-box i {
+    padding: 10px;
+    float: right;
+    color: #b9b7b8;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+h2 {
+    margin-left: 13px;
+}
+
+.top-box h2 {
+    margin: 5px !important;
+}
+
+.time-details {
+    margin-top: 15px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+
+/* The answers section */
+
+.panel-default {
+    background: white;
+    width: 96%;
+}
+
+.panel-body.answer {
+    border: 1px solid #b9b7b8;
+    border-radius: 1px;
+    margin-left: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.answer img {
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    padding-left: 0px !important;
+}
+
+.text-box {
+    padding: 0px !important;
+    left: -20px;
+}
+
+.tell-us-box {
+    background: #eeeeee;
+    top: 20px;
+    margin-bottom: 0px !important;
+}
+
+.tell-us-text {
+    background: transparent;
+    top: 5px;
+    margin-bottom: 0px;
+}
+
+.tell-us-arrow {
+    background: transparent;
+    padding-right: 0px !important;
+    margin-bottom: 0px;
+}
+
+.tell-us-arrow .glyphicon-menu-right {
+    top: 5px;
+    font-size: 45px;
+}
+
+.answer-bottom {
+    background-color: #eeeeee;
+    border-top: 1px solid #b9b7b8;
+}
+
+.new-sign {
+    color: white;
+    background: #a1a1a1;
+    border-radius: 8px;
+    border: 2px solid #a1a1a1;
+    padding:0.4px 5px 0.4px 5px;
+}
+
+.user-box{
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    background: #EEEEEE;
+}
+
+.user-box-text{
+    top: -11px;
+}
+.user-box-contact{
+    margin-bottom: 10px;
+    
+}
+.user-jobs{
+    padding-left: 10px;
+        padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+.numberCircle {
+    
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    width: 20px;
+    height: 2px;
+    padding: 6px;
+    background: #337ab7;
+    /* border: 2px solid #666; */
+    color: white;
+    text-align: center;
+    font: 12px Arial, sans-serif;
+}
+.user-jobs-numbers{
+    margin-left: 10px;
+    margin-top: 24px;
+    font-size: 12px;
+}
+.user-box-comment-first{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+}
+.user-box-comment{
+    border-radius: 0px;
+}
+.user-box-comment .row p{
+    color: gray;
+    text-align: center;
+    margin: 6px;
+ }
